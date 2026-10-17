@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Campaign Performance Review – Isabella</title>
+<style>
+:root{color-scheme:light;--bg:#f7f9fb;--fg:#1c2733;--mut:#5f6c7a;--line:#dbe3ea;--card:#fff;--acc:#1f6feb;--acc2:#e8f0fe;--ok:#1a9b5f;--warn:#e08a00;--bad:#d64545;--tbg:#fff4de;--tbd:#e0a030}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.5 "Segoe UI","Trebuchet MS",Arial,sans-serif}
+main{max-width:980px;margin:0 auto;padding:16px 16px 70px}
+h1{font-size:2rem;margin:.2em 0}h2{font-size:1.4rem;margin:0 0 .3em}h3{font-size:1.02rem;margin:.9em 0 .3em}
+.hero{background:linear-gradient(135deg,#1f6feb,#5aa0ff);color:#fff;border-radius:16px;padding:22px;margin:10px 0}
+.hero p{margin:.3em 0}
+section{margin:26px 0}
+.sub{color:var(--mut);margin:0 0 10px}
+.pill{display:inline-block;font-size:.78rem;font-weight:700;padding:2px 10px;border-radius:99px;background:var(--acc2);color:var(--acc);margin-right:6px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;box-shadow:0 1px 3px rgba(20,40,70,.06)}
+.card h3{margin-top:0}
+.task{border-left:5px solid var(--acc);background:var(--acc2);border-radius:8px;padding:8px 14px;margin:10px 0}
+nav{position:sticky;top:0;background:var(--bg);z-index:5;padding:8px 0;border-bottom:1px solid var(--line);font-size:.85rem;overflow-x:auto;white-space:nowrap}
+nav a{color:var(--acc);text-decoration:none;margin-right:12px;font-weight:600}
+button.fc,button.rv{font:inherit;text-align:left;cursor:pointer;width:100%}
+button.fc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;box-shadow:0 1px 3px rgba(20,40,70,.06)}
+button.fc b{font-size:1.05rem;color:var(--acc);display:block}
+button.fc .tp{font-size:.75rem;color:var(--mut)}
+button.fc .bk{display:none;margin-top:8px;font-size:.93rem}
+button.fc[aria-pressed=true]{background:var(--acc2);border-color:var(--acc)}
+button.fc[aria-pressed=true] .bk{display:block}
+button.rv{background:#fff;border:1px dashed var(--acc);border-radius:8px;padding:6px 10px;color:var(--acc);margin-top:6px;font-weight:600}
+button.rv+.ans{display:none;background:#eaf7f0;border-left:4px solid var(--ok);padding:6px 10px;border-radius:6px;margin-top:4px}
+button.rv[aria-expanded=true]+.ans{display:block}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
+.kpi .bar{height:10px;background:#e6ecf2;border-radius:6px;overflow:hidden;margin:8px 0 4px}
+.kpi .bar i{display:block;height:100%}
+.kpi .n{font-size:1.5rem;font-weight:700}
+.g i{background:var(--ok)}.y i{background:var(--warn)}.r i{background:var(--bad)}
+.steps{counter-reset:s;display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.steps .card{counter-increment:s;position:relative;padding-left:48px}
+.steps .card:before{content:counter(s);position:absolute;left:12px;top:12px;width:26px;height:26px;border-radius:50%;background:var(--acc);color:#fff;text-align:center;font-weight:700;line-height:26px}
+.vs{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.vs .bad{border-top:5px solid var(--bad)}.vs .good{border-top:5px solid var(--ok)}
+.t{background:var(--tbg);border-left:6px solid var(--tbd);border-radius:8px;padding:6px 14px 10px;margin:12px 0}
+.t:before{content:"Teacher only";font-size:.75rem;font-weight:700;background:var(--tbd);color:#222;padding:2px 8px;border-radius:99px;display:inline-block;margin-top:6px}
+.hide-t .t,.hide-t .tcol{display:none}
+table{border-collapse:collapse;width:100%;font-size:.9rem;background:#fff}
+th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}
+th{background:var(--acc2)}
+.wrap{overflow-x:auto}
+ul,ol{padding-left:1.2em;margin:.3em 0}
+.sw{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:2px solid var(--tbd);padding:10px 16px;text-align:center;z-index:9}
+.sw label{font-weight:700;cursor:pointer}
+.sw input{width:20px;height:20px;vertical-align:middle;margin-right:8px}
+@media print{nav,.sw{display:none}}
+</style>
+</head>
+<body class="hide-t">
+<main>
+<div class="hero">
+<span class="pill">Business English · B1–B2 · 45–60 min</span>
+<h1>Campaign Performance Review</h1>
+<p>Isabella, today you will explain a campaign that is not working, give your opinion, disagree politely and plan next steps. At the end, you will do a <b>Global Meeting</b>!</p>
+</div>
+<nav><a href="#over">Plan</a><a href="#a">1 Warm-up</a><a href="#b">2 Case</a><a href="#c">3 Words</a><a href="#d">4 Structure</a><a href="#e">5 Opinions</a><a href="#f">6 Grammar</a><a href="#g">7 Analyse</a><a href="#h">8 Meeting</a><a href="#i">9 Review</a></nav>
+
+<section id="over">
+<h2>Lesson map</h2>
+<div class="grid">
+<div class="card"><h3>1 Warm-up</h3><p class="sub">5 min · talk about your work</p></div>
+<div class="card"><h3>2–3 Case + words</h3><p class="sub">13 min · read, notice, use</p></div>
+<div class="card"><h3>4–5 Structure + opinions</h3><p class="sub">11 min · say it clearly</p></div>
+<div class="card"><h3>6 Grammar</h3><p class="sub">6 min · two useful tools</p></div>
+<div class="card"><h3>7 Analyse</h3><p class="sub">8 min · find the problem</p></div>
+<div class="card"><h3>8 Global Meeting</h3><p class="sub">12 min · main activity</p></div>
+<div class="card"><h3>9 Review</h3><p class="sub">5 min · feedback + self-check</p></div>
+</div>
+<div class="t">
+<p><b>Visão geral:</b> Isabella é B2 com dificuldade em precisão gramatical. Nesta versão, o inglês é mais simples (B1–B2): frases curtas, vocabulário de marketing essencial e muita prática oral. O aluno fala a maior parte do tempo; você observa e corrige depois.</p>
+<p><b>Metas SMART:</b> (1) resumo oral → etapas 4 e 8; (2) texto escrito livre → e-mail de follow-up (etapa 9). Compare o rubric (no final) a cada aula até 30/01/2027.</p>
+<p><b>Versão de 45 min:</b> faça só 4 cartões de vocabulário e pule a tarefa de pronúncia. <b>Extensão a 60:</b> segunda rodada da reunião com outra objeção.</p>
+<p><b>Antes da aula:</b> deixe a página aberta, ative o “Teacher’s view” no fim da página, tenha cronômetro e grave o áudio (com permissão).</p>
+</div>
+</section>
+
+<section id="a">
+<h2>1 · Warm-up: your work</h2>
+<p class="sub">Answer with details. Give an example for each question.</p>
+<div class="grid">
+<div class="card"><span class="pill">Q1</span><br>What campaign are you working on now? What is the goal?</div>
+<div class="card"><span class="pill">Q2</span><br>Tell me about a time when results were worse than expected. What did you do?</div>
+<div class="card"><span class="pill">Q3</span><br>Which numbers do you check first? Why?</div>
+<div class="card"><span class="pill">Q4</span><br>In your Global Meetings, what is hard for you: giving an update, explaining a problem, or disagreeing?</div>
+<div class="card"><span class="pill">Q5</span><br>What do you want to say better in English at work?</div>
+</div>
+<div class="t"><p>Anote 3–4 erros recorrentes sem interromper. Follow-ups: “Can you give an example?”, “What happened next?”. A Q4 mostra onde ela mais precisa de apoio.</p></div>
+</section>
+
+<section id="b">
+<h2>2 · The case: NovaTrail “Trail Ready”</h2>
+<p class="sub">Fictional company, fictional data. Read the numbers. Do not solve it yet.</p>
+<div class="task"><b>Task:</b> You are the marketing analyst. It is week 5 of 6. On Monday you must tell the global team: “Do we continue, change or stop?” What do you notice? What questions do you have?</div>
+<div class="card"><b>The campaign:</b> 6 weeks · new recycled backpacks · Brazil, Germany, US · paid social, influencers, email · target: people 25–40 who hike, travel and care about the planet · goals: awareness and <b>900 pre-orders</b>.</div>
+<h3>KPI cards: result vs. target</h3>
+<div class="grid kpi">
+<div class="card g"><span class="n">96%</span> Reach<div class="bar"><i style="width:96%"></i></div>1.15M of 1.2M</div>
+<div class="card y"><span class="n">69%</span> Engagement rate<div class="bar"><i style="width:69%"></i></div>3.1% of 4.5%</div>
+<div class="card y"><span class="n">56%</span> Click-through rate<div class="bar"><i style="width:56%"></i></div>1.4% of 2.5%</div>
+<div class="card r"><span class="n">37%</span> Conversion rate<div class="bar"><i style="width:37%"></i></div>1.1% of 3.0% · 177 pre-orders</div>
+<div class="card g"><span class="n">110%</span> Email open rate<div class="bar"><i style="width:100%"></i></div>33% of 30%</div>
+</div>
+<h3>By market</h3>
+<div class="grid">
+<div class="card"><b>Brazil</b><br>6,100 visits · conversion 1.5% · 92 pre-orders</div>
+<div class="card"><b>Germany</b><br>5,000 visits · conversion 0.6% · 30 pre-orders</div>
+<div class="card"><b>US</b><br>5,000 visits · conversion 1.1% · 55 pre-orders</div>
+</div>
+<h3>What happened</h3>
+<div class="steps">
+<div class="card"><b>Weeks 1–2</b><br>Launch. CTR is 2.1% in week 2.</div>
+<div class="card"><b>Week 3</b><br>Influencer video is 9 days late. German page shows prices in USD until day 12 (now fixed).</div>
+<div class="card"><b>Week 4</b><br>Instagram engagement goes down.</div>
+<div class="card"><b>Week 5</b><br>Mobile page takes 5.8 seconds to load. Rumour (not confirmed): a competitor has a discount in Germany. Budget left: 30%.</div>
+</div>
+<div class="t"><p><b>O que esperar:</b> ela deve perceber que o alcance está bom, mas a conversão está muito baixa. Boas perguntas: “Is the problem the page or the audience?”. Confirme fatos só se ela perguntar; não revele a análise (ver etapa 7).</p></div>
+</section>
+
+<section id="c">
+<h2>3 · Words for the meeting</h2>
+<p class="sub">Click a card. Say the example aloud, then do the mini-task.</p>
+<div class="grid">
+<button class="fc" aria-pressed="false"><span class="tp">KPI term</span><b>conversion rate</b><span class="bk">The % of visitors who buy or sign up.<br><i>“Conversion rate is 1.1%. The target is 3%.”</i><br><b>Task:</b> compare Germany with the target.</span></button>
+<button class="fc" aria-pressed="false"><span class="tp">KPI term</span><b>click-through rate (CTR)</b><span class="bk">The % of people who click after they see the ad.<br><i>“CTR went down from 2.1% to 1.4%.”</i><br><b>Task:</b> describe the CTR change.</span></button>
+<button class="fc" aria-pressed="false"><span class="tp">KPI term</span><b>engagement rate</b><span class="bk">Likes, comments and shares compared with the audience size.<br><i>“Engagement is below target.”</i><br><b>Task:</b> is engagement or reach the bigger problem?</span></button>
+<button class="fc" aria-pressed="false"><span class="tp">KPI term</span><b>reach</b><span class="bk">The number of different people who see your content.<br><i>“We reached 96% of our target.”</i><br><b>Task:</b> explain “reach” to a friend.</span></button>
+<button class="fc" aria-pressed="false"><span class="tp">General</span><b>performance gap</b><span class="bk">The difference between the target and the real result.<br><i>“The biggest gap is in conversion.”</i><br><b>Task:</b> name the biggest and smallest gap.</span></button>
+<button class="fc" aria-pressed="false"><span class="tp">General</span><b>underperform / outperform</b><span class="bk">To do worse / better than expected.<br><i>“Email outperformed paid social.”</i><br><b>Task:</b> which channel underperforms?</span></button>
+<button class="fc" aria-pressed="false"><span class="tp">General</span><b>root cause</b><span class="bk">The real reason for a problem (not just the symptom).<br><i>“We don’t know the root cause yet.”</i><br><b>Task:</b> is low CTR a cause or a symptom?</span></button>
+<button class="fc" aria-pressed="false"><span class="tp">General</span><b>next steps</b><span class="bk">The actions we will do after the meeting.<br><i>“Next step: test a faster page by Friday.”</i><br><b>Task:</b> give one next step with a deadline.</span></button>
+</div>
+<h3>Phrase bank</h3>
+<div class="grid">
+<div class="card"><b>Give an update</b><br>“Here is a quick update.” · “The main point is…” · “We are at X% of target.”</div>
+<div class="card"><b>Trends</b><br>“…went up / went down / stayed the same.” · “a big drop” · “a small increase”</div>
+<div class="card"><b>Compare</b><br>“…is X points below target.” · “We didn’t reach…” · “We passed…”</div>
+<div class="card"><b>Interpret</b><br>“This shows…” · “One possible reason is…” · “We need more data.”</div>
+</div>
+<div class="t"><p>Elicite antes de explicar (“What do we call the % of people who click?”). Se ela já conhece o termo, peça só a colocação. Um cartão por vez, rápido. Anote termos que ela evita na simulação.</p></div>
+</section>
+
+<section id="d">
+<h2>4 · Explain a problem clearly</h2>
+<p class="sub">Use six steps, in this order.</p>
+<div class="steps">
+<div class="card"><b>Headline</b><br>The main point first.<br><i>“Conversion is far below target.”</i></div>
+<div class="card"><b>Context</b><br>One short sentence of background.</div>
+<div class="card"><b>Evidence</b><br>Numbers. <i>“It is 1.1%; the target is 3%.”</i></div>
+<div class="card"><b>Impact</b><br>What it means. <i>“We have only 177 of 900 pre-orders.”</i></div>
+<div class="card"><b>Possible cause</b><br><i>“This may be because…”</i></div>
+<div class="card"><b>Recommendation</b><br><i>“I suggest we…”</i></div>
+</div>
+<h3>Facts vs. ideas</h3>
+<div class="grid">
+<div class="card"><b>Fact:</b> “We know the German page showed USD prices for 12 days.”</div>
+<div class="card"><b>Idea:</b> “We think the competitor discount may be hurting sales. We need to check.”</div>
+</div>
+<h3>Before and after</h3>
+<div class="vs">
+<div class="card bad"><b>Unclear</b><br>“The campaign is not going well. The numbers are a bit low and maybe the page has a problem.”</div>
+<div class="card good"><b>Clear</b><br>“The main point: conversion is 1.1%, and the target is 3%. Reach is good, so people see us but don’t buy. The page may be one cause. We need to check.”</div>
+</div>
+<div class="task"><b>Task (45 seconds):</b> give an update on the NovaTrail case with the six steps. Use only keywords.</div>
+<div class="t"><p>Treino direto da meta “resumo oral”. Ela começou pela headline? Separou fato de ideia? Se ela começar pelos detalhes: “Start again. What is the main point in one sentence?”. Peça uma segunda versão, mais curta.</p></div>
+</section>
+
+<section id="e">
+<h2>5 · Opinions and disagreement</h2>
+<p class="sub">Choose the style that fits the person and situation.</p>
+<div class="wrap"><table>
+<tr><th>Function</th><th>Neutral</th><th>Friendly</th><th>Strong</th></tr>
+<tr><td>Opinion</td><td>“I think we should…”</td><td>“Maybe we could…”</td><td>“I strongly recommend…”</td></tr>
+<tr><td>Partly agree</td><td>“That’s partly true.”</td><td>“I see your point, and…”</td><td>“I agree, but…”</td></tr>
+<tr><td>Disagree</td><td>“I’m not sure that’s the main issue.”</td><td>“I understand. Can we also look at…?”</td><td>“I don’t agree, because…”</td></tr>
+<tr><td>Ask for proof</td><td>“What is the evidence?”</td><td>“Do we have data on that?”</td><td>“That is an idea, not a fact yet.”</td></tr>
+<tr><td>Ask to clarify</td><td>“What do you mean?”</td><td>“Can you tell me more?”</td><td>“Can you be specific?”</td></tr>
+<tr><td>Change your mind</td><td>“OK, that changes my view.”</td><td>“Thanks, that helps. Then maybe…”</td><td>“Now I recommend something different.”</td></tr>
+</table></div>
+<div class="task"><b>Practice – answer aloud and say why you chose that style:</b><br>① A colleague says: “The video is the problem.” You are not sure.<br>② Your manager says: “Let’s stop the campaign.” You disagree.<br>③ New data shows you were wrong.</div>
+<div class="t"><p>Peça que ela justifique o registro (“Why friendly here?”). Repita o cenário ① com o estilo oposto. Ela deve adaptar, não só repetir frases.</p></div>
+</section>
+
+<section id="f">
+<h2>6 · Grammar tools</h2>
+<p class="sub">Notice first. Then explain the rule in your own words.</p>
+<div class="grid">
+<div class="card"><h3>Tool 1: Present Perfect vs. Past Simple</h3>
+<p>A) “We <b>have fixed</b> the price bug.”<br>B) “We <b>fixed</b> it on day 12.”</p>
+<p><b>Which one gives a finished time?</b></p>
+<button class="rv" aria-expanded="false">Show answer</button><div class="ans">B. Past Simple = finished time (day 12). Present Perfect = the result matters now (“so far”, “this week”).</div></div>
+<div class="card"><h3>Tool 2: How sure are you?</h3>
+<p>“It <b>must</b> be the page.”<br>“It <b>might</b> be the page.”<br>“It <b>can’t</b> be only the page.”</p>
+<p><b>Put them in order: sure → not sure.</b></p>
+<button class="rv" aria-expanded="false">Show answer</button><div class="ans">must (very sure, we have evidence) → can’t (almost sure it is not) → might (possible).</div></div>
+</div>
+<div class="task"><b>Your turn:</b> say 4 sentences about the case: 2 about progress (Present Perfect and Past Simple) and 2 ideas with different certainty. Explain: how does the grammar change the meaning?</div>
+<div class="t"><p><b>Por que estes dois pontos:</b> Present Perfect/Past Simple é o erro mais comum em relatórios de progresso; modais de certeza ajudam a separar fato de hipótese. Erro típico: “We have fixed it yesterday.” → reformule: “Yesterday… <i>we fixed it yesterday</i>.” e peça que ela explique a diferença.</p></div>
+</section>
+
+<section id="g">
+<h2>7 · Analyse the case</h2>
+<div class="task"><b>You have 8 minutes.</b><br>① What is the main problem?<br>② Make two lists: <b>facts</b> and <b>ideas</b>.<br>③ Give two possible causes. What data would check each one?<br>④ Choose <b>three actions</b>. The budget is only 30%, so put them in order.</div>
+<div class="t">
+<p><b>Gabarito:</b> o problema central é a <b>conversão</b> (≈37% do alvo; pré-vendas ≈20% da meta de 900), não o alcance (96%). O email passa do alvo → há interesse; o problema parece estar depois do clique ou no tráfego pago.</p>
+<p><b>Fatos:</b> alcance perto do alvo; CTR e engajamento abaixo; preço em USD na Alemanha por 12 dias; página mobile em 5,8 s; vídeo atrasado 9 dias. <b>Ideias:</b> criativo cansado, desconto do concorrente, página lenta como causa principal.</p>
+<p><b>Ambiguidade:</b> a conversão baixa pode vir da página <b>ou</b> do criativo/público. O Brasil converte melhor (1,5%) → causas diferentes por mercado. O bug em USD é fato, mas só explica parte; verifique os dados depois do dia 12.</p>
+<p><b>Ações possíveis:</b> acelerar a página mobile; renovar o criativo do Instagram; testar a página alemã; mover verba para email e Brasil. Alternativas aceitas se justificadas: pausar a Alemanha ou manter mais uma semana. Observe se há prioridade e métrica de sucesso.</p>
+</div>
+</section>
+
+<section id="h">
+<h2>8 · Global Meeting</h2>
+<p class="sub">You are the Marketing team. The Regional Director for Europe will ask you questions. Prepare for 2 minutes with keywords only.</p>
+<div class="steps">
+<div class="card"><b>Update</b><br>Give a short update (90 seconds max).</div>
+<div class="card"><b>Explain</b><br>Why is the campaign underperforming?</div>
+<div class="card"><b>Facts or ideas?</b><br>Say what you know and what you still need to check.</div>
+<div class="card"><b>Opinion</b><br>Give your view and explain why.</div>
+<div class="card"><b>Disagree</b><br>Answer objections politely.</div>
+<div class="card"><b>Negotiate</b><br>What is your priority with no extra budget?</div>
+<div class="card"><b>Next steps</b><br>Who does what, and by when?</div>
+<div class="card"><b>Recap</b><br>“To recap, we agreed…”</div>
+</div>
+<div class="grid">
+<div class="card"><b>Help for you</b><br>“I see your point, but…” · “Can we look at…?” · “If we can’t increase the budget, I would…” · “By Friday, … will…” · “We will measure success by…”</div>
+</div>
+<div class="t">
+<p><b>Role card – Marcus Weber, Regional Director, Europe.</b> Sênior, objetivo, cético com “explicações”.</p>
+<p><b>Objetivos:</b> proteger a Alemanha, não gastar mais, sair com uma decisão. <b>Só você sabe:</b> o orçamento do Q4 está congelado (sem aumento possível); o time local acha que o criativo é “muito global”.</p>
+<p><b>Sequência:</b> (1) deixe-a apresentar sem interromper. (2) <b>Desafio 1:</b> “I don’t agree. I think the creative is the problem, not the page.” (3) <b>Informação nova:</b> “The local team says the price fix is only on desktop, not mobile.” → ela deve ajustar a recomendação. (4) <b>Desafio 2:</b> “We can’t increase the budget. What would you prioritise? What are the risks?” (5) Peça o resumo: “Can you summarise what we decided?”.</p>
+<p><b>Perguntas extras:</b> What evidence supports that? · How do we know this is the main issue? · Could there be another reason? · What do you need from the global team? · How will we know it works? Mantenha a discordância realista e respeitosa. Se ela travar, faça uma pergunta mais simples e depois volte a subir o nível.</p>
+</div>
+</section>
+
+<section id="i">
+<h2>9 · Review yourself</h2>
+<div class="grid">
+<div class="card"><h3>I communicated well:</h3><p>______________</p></div>
+<div class="card"><h3>I found it hard to say:</h3><p>______________</p></div>
+<div class="card"><h3>An expression I want to use more:</h3><p>______________</p></div>
+<div class="card"><h3>Before my next meeting I will:</h3><p>______________</p></div>
+</div>
+<div class="task"><b>Homework (120 words):</b> write a short email after the meeting: what we decided, who does what, and by when.</div>
+<div class="t">
+<p><b>Ordem do feedback:</b> autoavaliação primeiro → 2 pontos fortes específicos → 2–3 prioridades → 3 erros trabalhados.</p>
+<p><b>Erros que bloqueiam a compreensão:</b> tempo verbal que muda o sentido, fato × ideia confusos, sem headline, vocabulário vago. <b>Erros menores (podem esperar):</b> artigos, preposições, “-s” da 3ª pessoa.</p>
+<p><b>Reformule sem desencorajar:</b> ela: “The campaign has fell short.” → você: “Yes, it <i>has fallen short</i> of the target.” Depois: “You said ‘We have launched it in September.’ What is the difference with ‘We launched it’?”</p>
+<p><b>Checklist:</b> ☐ erros anotados na etapa 1 ☐ papel de Marcus relido ☐ gravação autorizada ☐ fatos × ideias verificados ☐ autoavaliação feita ☐ tarefa enviada ☐ pontuação registrada.</p>
+<div class="wrap"><table>
+<tr><th>Critério (1–4)</th><th>1 Início</th><th>2 Em desenvolvimento</th><th>3 Eficaz</th><th>4 Forte</th></tr>
+<tr><td>Mensagem principal</td><td>Sem headline</td><td>Headline tardia</td><td>Headline clara</td><td>Headline + impacto</td></tr>
+<tr><td>Organização</td><td>Pula ideias</td><td>Estrutura parcial</td><td>Segue os 6 passos</td><td>Transições naturais</td></tr>
+<tr><td>Vocabulário</td><td>Vago</td><td>Alguns termos</td><td>Termos de KPI corretos</td><td>Variado e preciso</td></tr>
+<tr><td>Gramática</td><td>Erros bloqueiam</td><td>Muitos erros, mas entendo</td><td>Poucos erros</td><td>Raros, se autocorrige</td></tr>
+<tr><td>Fluência</td><td>Curta, hesitante</td><td>Alguma elaboração</td><td>Fala sustentada</td><td>Espontânea</td></tr>
+<tr><td>Escuta</td><td>Perde perguntas</td><td>Responde em parte</td><td>Responde direto</td><td>Retoma o ponto do outro</td></tr>
+<tr><td>Discordância</td><td>Cede ou rígida</td><td>Direta demais</td><td>Educada, com evidência</td><td>Muda de ideia com dados</td></tr>
+<tr><td>Próximos passos</td><td>Nenhum</td><td>Vagos</td><td>Com dono ou prazo</td><td>Priorizados, com métrica</td></tr>
+</table></div>
+<p><b>Registro:</b> total máx. 32. Meta até 30/01/2027: média ≥ 3. Anote data, total e uma prioridade.</p>
+</div>
+</section>
+</main>
+<div class="sw"><label><input type="checkbox" id="tv"> Teacher's view (show teacher-only parts)</label></div>
+<script>
+document.querySelectorAll('button.fc').forEach(function(b){b.addEventListener('click',function(){b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true')})});
+document.querySelectorAll('button.rv').forEach(function(b){b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);b.textContent=o?'Show answer':'Hide answer'})});
+document.getElementById('tv').addEventListener('change',function(e){document.body.classList.toggle('hide-t',!e.target.checked)});
+</script>
+</body>
+</html>
